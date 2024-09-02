@@ -101,3 +101,14 @@ def move(line, column):
 
     value = column + (line << 16)
     ctypes.windll.kernel32.SetConsoleCursorPosition(gHandle, c_ulong(value))
+
+"""
+NOTE: The special keys always provide 2 codes, so two executions of read() function
+are required and the actual key code is provided by the second execution.
+The first execution on read() provides either 0 or 224, depending on the machine.
+"""
+
+KEY_UP = 72
+KEY_DOWN = 80
+KEY_LEFT = 75
+KEY_RIGHT = 77
